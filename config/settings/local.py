@@ -5,12 +5,14 @@ SECRET_KEY = env('DJANGO_SECRET_KEY', default='(&w$dryiavve#a6vk9hg9nm194lhb$%mn
 
 DEBUG = env.bool('DJANGO_DEBUG', default=True)
 
-TOKEN_EXPIRE = env('ACCESS_TOKEN_LIFETIME', default=5)
+TOKEN_EXPIRE = env('ACCESS_TOKEN_LIFETIME', default=1)
 
 ALLOWED_HOSTS = ["*"]
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=TOKEN_EXPIRE),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=TOKEN_EXPIRE),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
