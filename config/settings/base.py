@@ -16,6 +16,7 @@ import environ
 ROOT_DIR = environ.Path(__file__) - 3
 
 APPS_DIR = ROOT_DIR.path('project')
+LOGS_DIR = ROOT_DIR.path('logs')
 
 env = environ.Env()
 # This section added from an update to standards in CookieCutter Django to ensure no errors are encountered at runserver/migrations
